@@ -34,4 +34,26 @@ ORDER BY sum_all_a_subtypes DESC
 LIMIT 10;
 
 
-/** Does the prevalence differ by region relative to weeks in the year? **/
+--Comparing the week with highest prevalence across the WHO regions for subtype_a
+WITH cte_a AS (SELECT whoregion, iso_week,
+    SUM(inf_a) AS sum_all_a_subtypes
+FROM flunet_table
+GROUP BY whoregion, iso_week
+HAVING SUM(inf_a) > 0
+ORDER BY sum_all_a_subtypes DESC)
+
+, cte_b AS (SELECT whoregion, MAX(sum_all_a_subtypes) as highest_weekly_total
+FROM cte_a 
+GROUP BY whoregion)
+
+SELECT cte_b.*, cte_a.iso_week
+from cte_b
+left join cte_a
+on cte_a.sum_all_a_subtypes = cte_b.highest_weekly_total
+ORDER BY cte_b.whoregion ASC;
+
+
+--Compare top 5 weeks relative to region 
+
+
+

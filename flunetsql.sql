@@ -47,9 +47,9 @@ FROM cte_a
 GROUP BY whoregion)
 
 SELECT cte_b.*, cte_a.iso_week
-from cte_b
-left join cte_a
-on cte_a.sum_all_a_subtypes = cte_b.highest_weekly_total
+FROM cte_b
+LEFT JOIN cte_a
+ON cte_a.sum_all_a_subtypes = cte_b.highest_weekly_total
 ORDER BY cte_b.whoregion ASC;
 
 

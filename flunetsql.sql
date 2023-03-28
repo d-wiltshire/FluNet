@@ -35,14 +35,20 @@ LIMIT 10;
 
 
 --Comparing the week with highest prevalence across the WHO regions for subtype_a
-WITH cte_a AS (SELECT whoregion, iso_week,
+WITH cte_a AS 
+(SELECT 
+    whoregion, 
+    iso_week,
     SUM(inf_a) AS sum_all_a_subtypes
 FROM flunet_table
 GROUP BY whoregion, iso_week
 HAVING SUM(inf_a) > 0
 ORDER BY sum_all_a_subtypes DESC)
 
-, cte_b AS (SELECT whoregion, MAX(sum_all_a_subtypes) as highest_weekly_total
+, cte_b AS 
+(SELECT 
+     whoregion, 
+ 	 MAX(sum_all_a_subtypes) as highest_weekly_total
 FROM cte_a 
 GROUP BY whoregion)
 
@@ -53,7 +59,27 @@ ON cte_a.sum_all_a_subtypes = cte_b.highest_weekly_total
 ORDER BY cte_b.whoregion ASC;
 
 
---Compare top 5 weeks relative to region 
+--Compare top 10 weeks relative to region for subtype_a
+--Rewrite to get top 10 of all regions and visualize -- connect with Tableau?
+SELECT 
+    whoregion, 
+    iso_week,
+    SUM(inf_a) AS sum_all_a_subtypes
+FROM flunet_table
+WHERE whoregion = 'AMR'
+GROUP BY whoregion, iso_week
+HAVING SUM(inf_a) > 0
+ORDER BY sum_all_a_subtypes DESC
+LIMIT 10;
 
 
-
+SELECT 
+    whoregion, 
+    iso_week,
+    SUM(inf_a) AS sum_all_a_subtypes
+FROM flunet_table
+WHERE whoregion = 'EUR'
+GROUP BY whoregion, iso_week
+HAVING SUM(inf_a) > 0
+ORDER BY sum_all_a_subtypes DESC
+LIMIT 10;

@@ -59,8 +59,10 @@ ON cte_a.sum_all_a_subtypes = cte_b.highest_weekly_total
 ORDER BY cte_b.whoregion ASC;
 
 
---Compare top 10 weeks relative to region for subtype_a
---Rewrite to get top 10 of all regions and visualize -- connect with Tableau?
+--Compare top 5 weeks relative to region for subtype_a
+/** 
+Least efficient solution: UNION, typing out each whoregion, e.g.:
+
 SELECT 
     whoregion, 
     iso_week,
@@ -70,8 +72,9 @@ WHERE whoregion = 'AMR'
 GROUP BY whoregion, iso_week
 HAVING SUM(inf_a) > 0
 ORDER BY sum_all_a_subtypes DESC
-LIMIT 10;
+LIMIT 10
 
+UNION
 
 SELECT 
     whoregion, 
@@ -82,4 +85,29 @@ WHERE whoregion = 'EUR'
 GROUP BY whoregion, iso_week
 HAVING SUM(inf_a) > 0
 ORDER BY sum_all_a_subtypes DESC
-LIMIT 10;
+LIMIT 10
+
+etc.;  **/
+
+
+--Refactored: Using window functions to perform calculations across sets of rows
+
+WITH cte_a AS 
+(SELECT 
+    whoregion, 
+    iso_week,
+    SUM(inf_a) AS sum_all_a_subtypes
+FROM flunet_table
+GROUP BY whoregion, iso_week
+HAVING SUM(inf_a) > 0
+ORDER BY sum_all_a_subtypes DESC)
+
+SELECT ranked_weeks.* FROM
+(SELECT cte_a.*,
+  RANK() OVER (PARTITION BY whoregion ORDER BY sum_all_a_subtypes DESC)
+  FROM cte_a) ranked_weeks 
+WHERE RANK <=5;
+
+
+-- Same for subtype b; compare; compare ten weeks (are there two peaks per year?); connect with Tableau; get larger data range
+

@@ -109,5 +109,23 @@ SELECT ranked_weeks.* FROM
 WHERE RANK <=5;
 
 
--- Same for subtype b; compare; compare ten weeks (are there two peaks per year?); connect with Tableau; get larger data range
+-- Same for subtype b 
 
+WITH cte_b AS 
+(SELECT 
+    whoregion, 
+    iso_week,
+    SUM(inf_b) AS sum_all_b_subtypes
+FROM flunet_table
+GROUP BY whoregion, iso_week
+HAVING SUM(inf_b) > 0
+ORDER BY sum_all_b_subtypes DESC)
+
+SELECT ranked_weeks.* FROM
+(SELECT cte_b.*,
+  RANK() OVER (PARTITION BY whoregion ORDER BY sum_all_b_subtypes DESC)
+  FROM cte_b) ranked_weeks 
+WHERE RANK <=5;
+
+
+--compare a to b; compare a specific a subtype to rest of subtypes compare ten weeks (are there two peaks per year?); connect with Tableau to visualize; get wider data range

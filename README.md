@@ -1,5 +1,5 @@
 # FluNet
-Work in progress
+**Work in progress**
 
 This repository will contain data analysis in SQL (PostgreSQL) of the World Health Organization FluNet data through 3/13/23 available: https://www.who.int/tools/flunet
 

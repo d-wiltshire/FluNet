@@ -5,7 +5,7 @@ This repository will contain data analysis in SQL (PostgreSQL) of the World Heal
 
 I have created this repository as a teaching tool for certain SQL functions: self-joins, CTEs, window functions
 
-Data dictionary available: https://app.powerbi.com/view?r=eyJrIjoiNjViM2Y4NjktMjJmMC00Y2NjLWFmOWQtODQ0NjZkNWM1YzNmIiwidCI6ImY2MTBjMGI3LWJkMjQtNGIzOS04MTBiLTNkYzI4MGFmYjU5MCIsImMiOjh9
+Data dictionary available (also available as an image file stored in this repository): https://app.powerbi.com/view?r=eyJrIjoiNjViM2Y4NjktMjJmMC00Y2NjLWFmOWQtODQ0NjZkNWM1YzNmIiwidCI6ImY2MTBjMGI3LWJkMjQtNGIzOS04MTBiLTNkYzI4MGFmYjU5MCIsImMiOjh9
 
 
 ## Sample Functions

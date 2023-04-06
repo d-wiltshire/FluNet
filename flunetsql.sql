@@ -121,7 +121,8 @@ GROUP BY whoregion, iso_week
 HAVING SUM(inf_b) > 0
 ORDER BY sum_all_b_subtypes DESC)
 
-SELECT ranked_weeks.* FROM
+SELECT ranked_weeks.* 
+FROM
 (SELECT cte_b.*,
   RANK() OVER (PARTITION BY whoregion ORDER BY sum_all_b_subtypes DESC)
   FROM cte_b) ranked_weeks 
@@ -129,3 +130,7 @@ WHERE RANK <=5;
 
 
 --compare a to b; compare a specific a subtype to rest of subtypes compare ten weeks (are there two peaks per year?); connect with Tableau to visualize; get wider data range
+
+--Self-Joins
+--Correlated Subqueries
+--Recursive CTEs

@@ -14,4 +14,10 @@ Data dictionary available (also available as an image file stored in this reposi
 
 ### CTEs
 
+#### Recursive CTEs
+
+Resources: 
+* https://www.sqlservertutorial.net/sql-server-basics/sql-server-recursive-cte/
+* https://builtin.com/data-science/recursive-sql
+
 ### Window Functions

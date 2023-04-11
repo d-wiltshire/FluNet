@@ -131,7 +131,7 @@ WHERE RANK <=5;
 
 --Find top 5 countryareaterritory where ah3 subtype is most frequently the only A subtype found (i.e., where ah3 = inf_a) and where a positive number of cases was found (i.e., not zero)
 
-with cte_a as 
+WITH cte_a as 
 (SELECT countryareaterritory,
 	CONCAT(iso_year, iso_week) AS year_week,
 	ah3, 
@@ -149,6 +149,19 @@ LIMIT 5;
 --compare a to b; compare a specific a subtype to rest of subtypes compare ten weeks (are there two peaks per year?); connect with Tableau to visualize; get wider data range
 
 --Self-Joins
+
 --Correlated Subqueries
+--For correlated subqueries, the query must be re-executed for every row, which increases query runtime.
+
+--Finding weeks for each country where the inf_a levels are higher than average 
+SELECT countryareaterritory, iso_sdate, iso_week, inf_a
+FROM flunet_table main
+WHERE inf_a >
+                (SELECT AVG(inf_a)
+                 FROM flunet_table sub
+                 WHERE sub.countryareaterritory = main.countryareaterritory
+                 GROUP BY countryareaterritory)
+ORDER BY countryareaterritory;
+
 --Recursive CTEs
 --https://www.sqlservertutorial.net/sql-server-basics/sql-server-recursive-cte/

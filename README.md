@@ -7,6 +7,7 @@ I have created this repository as a teaching tool for certain SQL functions: sel
 
 Data dictionary available (also available as an image file stored in this repository): https://app.powerbi.com/view?r=eyJrIjoiNjViM2Y4NjktMjJmMC00Y2NjLWFmOWQtODQ0NjZkNWM1YzNmIiwidCI6ImY2MTBjMGI3LWJkMjQtNGIzOS04MTBiLTNkYzI4MGFmYjU5MCIsImMiOjh9
 
+*Note idiosyncrasies of Postgres relative to MySQL, etc.
 
 ## Sample Functions
 

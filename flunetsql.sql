@@ -186,3 +186,28 @@ FROM cte_a
 GROUP BY country, quarter
 HAVING COUNT(quarter) > 10
 ORDER BY COUNT(quarter) DESC;
+
+--User-defined functions (scalar functions)
+
+
+--Join to unrelated table? Other tables from this org?
+
+--CUBE
+
+--ROLLUP
+
+--Indexes, clustered and non-clustered
+
+--Pivots
+
+--Triggers
+
+/**
+Except versus Not In.
+Rank versus dense rank versus row number.
+Calculating delta values.
+Calculating running totals.
+Date-time manipulation.**/
+
+--additional lists: https://softwareengineering.stackexchange.com/questions/181651/are-these-sql-concepts-for-beginners-intermediate-or-advanced-developers
+--https://medium.com/dp6-us-blog/7-advanced-sql-concepts-you-need-to-know-45fa149ba0b0

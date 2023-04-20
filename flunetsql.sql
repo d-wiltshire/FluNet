@@ -193,8 +193,27 @@ ORDER BY COUNT(quarter) DESC;
 --Join to unrelated table? Other tables from this org?
 
 --CUBE
+--Similar to ROLLUP
+
+SELECT
+   COALESCE(whoregion, '-') region,
+   COALESCE(countryareaterritory, 'TOTAL') country,
+   SUM(inf_b) inf_b
+FROM flunet_table
+GROUP BY CUBE(whoregion, countryareaterritory)
+ORDER BY whoregion, countryareaterritory;
+
 
 --ROLLUP
+--https://www.sqltutorial.org/sql-rollup/ ; ROLLUP is combined with GROUP BY to create a new line showing totals/subtotals
+
+SELECT 
+    COALESCE(whoregion, 'All WHO Regions') as whoregion,
+	countryareaterritory, 
+	SUM(inf_a)
+FROM flunet_table
+GROUP BY ROLLUP (whoregion, countryareaterritory)
+ORDER BY whoregion, countryareaterritory;
 
 --Indexes, clustered and non-clustered
 

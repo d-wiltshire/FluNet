@@ -146,6 +146,26 @@ GROUP BY countryareaterritory
 ORDER BY COUNT(year_week) DESC
 LIMIT 5;
 
+
+--Window functions: calculating running total
+--https://learnsql.com/blog/what-is-a-running-total-and-how-to-compute-it-in-sql/
+SELECT iso_sdate,
+  inf_a,
+  SUM(inf_a) OVER (ORDER BY iso_sdate) AS running_total
+FROM flunet_table
+WHERE countryareaterritory = 'Algeria';
+
+--Also using PARTITION BY to view all countries
+SELECT countryareaterritory,
+  iso_sdate,
+  inf_a,
+  SUM(inf_a) 
+  OVER (PARTITION BY countryareaterritory ORDER BY iso_sdate) AS running_total
+FROM flunet_table
+ORDER BY countryareaterritory, iso_sdate;
+
+
+
 --compare a to b; compare number of positive cases to total number tested; compare a specific a subtype to rest of subtypes compare ten weeks (are there two peaks per year?); connect with Tableau to visualize; get wider data range
 
 --Self-Joins

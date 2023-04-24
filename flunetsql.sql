@@ -205,13 +205,35 @@ SELECT country, quarter, COUNT(quarter)
 FROM cte_a 
 GROUP BY country, quarter
 HAVING COUNT(quarter) > 10
-ORDER BY COUNT(quarter) DESC;
+ORDER BY COUNT(quarter) DESC, country;
+
+--Date-time functions:
+--Refactoring the previous code with QUARTER() date-time function:
+WITH cte_a AS(
+SELECT countryareaterritory country,
+	EXTRACT(quarter FROM iso_sdate) as quarter
+FROM flunet_table
+WHERE inf_a > 100
+)
+
+SELECT country, quarter, COUNT(quarter)
+FROM cte_a 
+GROUP BY country, quarter
+HAVING COUNT(quarter) > 10
+ORDER BY COUNT(quarter) DESC, country;
+
+--Date-time functions are specific to the SQL you are using; PostgreSQL differs from MySQL, SQL Server, etc. 
+--More on PostgreSQL date-time functions here: https://www.sqlshack.com/working-with-date-and-time-functions-in-postgresql/
+
+--Additional examples of PostgreSQL date-time functions
 
 --User-defined functions (scalar functions)
 
 
 --Join to unrelated table? Other tables from this org?
 
+
+--Calculating running totals with CUBE and ROLLUP:
 --CUBE
 --Similar to ROLLUP
 
@@ -245,7 +267,6 @@ ORDER BY whoregion, countryareaterritory;
 Except versus Not In.
 Rank versus dense rank versus row number.
 Calculating delta values.
-Calculating running totals.
 Date-time manipulation.**/
 
 --additional lists: https://softwareengineering.stackexchange.com/questions/181651/are-these-sql-concepts-for-beginners-intermediate-or-advanced-developers

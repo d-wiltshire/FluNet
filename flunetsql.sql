@@ -227,6 +227,8 @@ ORDER BY COUNT(quarter) DESC, country;
 
 --Additional examples of PostgreSQL date-time functions
 
+
+
 --User-defined functions (scalar functions)
 
 
@@ -263,11 +265,57 @@ ORDER BY whoregion, countryareaterritory;
 
 --Triggers
 
+--Calculating delta values with LEAD, LAG (window function?)
+--https://www.postgresqltutorial.com/postgresql-window-function/postgresql-lag-function/
+--https://www.postgresqltutorial.com/postgresql-window-function/postgresql-lead-function/
+/**
+THIS DOES NOT WORK
+SELECT iso_sdate, 
+	inf_a, 
+	CASE WHEN LEAD(inf_a) OVER (ORDER BY iso_sdate DESC) = 0 
+	   THEN 1
+	   ELSE LEAD(inf_a) OVER (ORDER BY iso_sdate DESC)
+	END AS previous_day_amount,
+	((( inf_a - LEAD(inf_a) OVER (ORDER BY iso_sdate DESC)) / (LEAD(inf_a) OVER (ORDER BY iso_sdate DESC)) * 100)
+	
+FROM flunet_table
+WHERE countryareaterritory = 'Algeria'
+ORDER BY iso_sdate ASC;
+**/
+	 
+SELECT iso_sdate, 
+	inf_a, 
+	LAG(inf_a) OVER (ORDER BY iso_sdate) AS previous_day_amount
+FROM flunet_table
+WHERE countryareaterritory = 'Algeria'
+ORDER BY iso_sdate;
+--is this identical to LEAD desc(above?)
+	 
+	 
+--Using a CTE for variance
+WITH cte_a AS (
+SELECT iso_sdate, 
+	inf_a, 
+	LAG(inf_a) OVER (ORDER BY iso_sdate) AS previous_day_amount
+
+FROM flunet_table
+WHERE countryareaterritory = 'Algeria'
+ORDER BY iso_sdate)
+
+SELECT iso_sdate,
+inf_a,
+previous_day_amount,
+(inf_a - previous_day_amount) AS variance
+
+FROM cte_a;
+--incorporate CASE WHEN from above for percentage change?
+	 
+	 
+	 
 /**
 Except versus Not In.
 Rank versus dense rank versus row number.
-Calculating delta values.
-Date-time manipulation.**/
+**/
 
 --additional lists: https://softwareengineering.stackexchange.com/questions/181651/are-these-sql-concepts-for-beginners-intermediate-or-advanced-developers
 --https://medium.com/dp6-us-blog/7-advanced-sql-concepts-you-need-to-know-45fa149ba0b0

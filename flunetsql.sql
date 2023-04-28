@@ -293,10 +293,13 @@ ORDER BY iso_sdate;
 	 
 	 
 --Using a CTE for variance
+--Note: CAST is needed here in the CTE because when Postgres divides two integers, the result will also be an integer with remainder discarded. Therefore we need to cast one as a non-integer. https://datacomy.com/sql/postgresql/division/
+--In addition, Postgres does not support the use of ROUND with a double precision type, so we must cast as NUMERIC to use ROUND. https://pgsql-sql.postgresql.narkive.com/835yQ640/sql-error-function-round-double-precision-integer-does-not-exist
+--The double colon :: is a Postgres-specific alternative to CAST as type https://stackoverflow.com/questions/15537709/what-does-do-in-postgresql
 WITH cte_a AS (
 SELECT iso_sdate, 
 	inf_a, 
-	LAG(inf_a) OVER (ORDER BY iso_sdate) AS previous_day_amount
+	CAST((LAG(inf_a) OVER (ORDER BY iso_sdate)) AS FLOAT) AS previous_day_amount
 
 FROM flunet_table
 WHERE countryareaterritory = 'Algeria'
@@ -305,11 +308,17 @@ ORDER BY iso_sdate)
 SELECT iso_sdate,
 inf_a,
 previous_day_amount,
-(inf_a - previous_day_amount) AS variance
+(inf_a - previous_day_amount) AS variance,
+ROUND((CASE WHEN previous_day_amount = 0 
+	   THEN (inf_a - previous_day_amount)
+	   ELSE ((inf_a - previous_day_amount)/previous_day_amount)
+	END)::NUMERIC, 2) AS change
 
 FROM cte_a;
 --incorporate CASE WHEN from above for percentage change?
-	 
+	   CAST(
+            (CASE WHEN P.IsGun = 1 THEN CEILING(PQ.Price1Avg) ELSE PQ.Price1 END)
+             AS NUMERIC(8,2))
 	 
 	 
 /**

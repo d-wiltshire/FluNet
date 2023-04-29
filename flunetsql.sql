@@ -260,28 +260,30 @@ GROUP BY ROLLUP (whoregion, countryareaterritory)
 ORDER BY whoregion, countryareaterritory;
 
 --Indexes, clustered and non-clustered
+select distinct whoregion
+from flunet_table
 
 --Pivots
-
---Triggers
+--Pivots in SQL Server: https://learn.microsoft.com/en-us/sql/t-sql/queries/from-using-pivot-and-unpivot?view=sql-server-ver16
+--Pivots in Postgres: https://stackoverflow.com/questions/20618323/create-a-pivot-table-with-postgresql
+/** for SQL Server:
+SELECT 'Average inf_a' AS Average_by_WHORegion,   
+  [SEAR], [EUR], [AMR], [AFR], [EMR], [WPR] 
+FROM  
+(
+  SELECT whoregion, inf_a   
+  FROM flunet_table
+) AS SourceTable  
+PIVOT  
+(  
+  AVG(inf_a)  
+  FOR whoregion IN ([SEAR], [EUR], [AMR], [AFR], [EMR], [WPR])  
+) AS PivotTable;  **/
 
 --Calculating delta values with LEAD, LAG (window function?)
 --https://www.postgresqltutorial.com/postgresql-window-function/postgresql-lag-function/
 --https://www.postgresqltutorial.com/postgresql-window-function/postgresql-lead-function/
-/**
-THIS DOES NOT WORK
-SELECT iso_sdate, 
-	inf_a, 
-	CASE WHEN LEAD(inf_a) OVER (ORDER BY iso_sdate DESC) = 0 
-	   THEN 1
-	   ELSE LEAD(inf_a) OVER (ORDER BY iso_sdate DESC)
-	END AS previous_day_amount,
-	((( inf_a - LEAD(inf_a) OVER (ORDER BY iso_sdate DESC)) / (LEAD(inf_a) OVER (ORDER BY iso_sdate DESC)) * 100)
-	
-FROM flunet_table
-WHERE countryareaterritory = 'Algeria'
-ORDER BY iso_sdate ASC;
-**/
+
 	 
 SELECT iso_sdate, 
 	inf_a, 
@@ -315,10 +317,7 @@ ROUND((CASE WHEN previous_day_amount = 0
 	END)::NUMERIC, 2) AS change
 
 FROM cte_a;
---incorporate CASE WHEN from above for percentage change?
-	   CAST(
-            (CASE WHEN P.IsGun = 1 THEN CEILING(PQ.Price1Avg) ELSE PQ.Price1 END)
-             AS NUMERIC(8,2))
+
 	 
 	 
 /**

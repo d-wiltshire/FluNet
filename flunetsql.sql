@@ -226,7 +226,27 @@ ORDER BY COUNT(quarter) DESC, country;
 --More on PostgreSQL date-time functions here: https://www.sqlshack.com/working-with-date-and-time-functions-in-postgresql/
 
 --Additional examples of PostgreSQL date-time functions
+--There are many: https://www.postgresql.org/docs/current/functions-datetime.html
+--EXTRACT(field FROM source) used with Quarter above; can also be used with day, month, year, day of week (DOW), etc.
 
+SELECT countryareaterritory,
+    iso_sdate,
+	EXTRACT(day FROM iso_sdate) as day,
+	EXTRACT(month FROM iso_sdate) as month,
+	EXTRACT(year FROM iso_sdate) as year,
+	EXTRACT(dow FROM iso_sdate) as day_of_week,
+	EXTRACT(century FROM iso_sdate) as century
+FROM flunet_table
+WHERE inf_a > 50
+AND countryareaterritory LIKE '%United States%';
+
+--Subtracting an interval with current_date to find outbreaks in the last 100 days
+SELECT countryareaterritory,
+    iso_sdate,
+	inf_a
+FROM flunet_table
+WHERE current_date - iso_sdate < 100
+AND inf_a > 50;
 
 
 --User-defined functions (scalar functions)

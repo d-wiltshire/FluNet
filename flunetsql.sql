@@ -338,11 +338,26 @@ ROUND((CASE WHEN previous_day_amount = 0
 
 FROM cte_a;
 
-	 
+
+--Rank versus dense rank versus row number.
+--https://www.eversql.com/rank-vs-dense_rank-vs-row_number-in-postgresql/
+--With rank, rows with the same value are ranked with the same number. This is not true with dense_rank.
+
+WITH cte_a AS (
+SELECT countryareaterritory, 
+	(CASE WHEN MAX(inf_a) IS NULL THEN 0
+	ELSE MAX(inf_a) END) max_inf_a
+FROM flunet_table
+GROUP BY countryareaterritory)
+
+SELECT countryareaterritory,
+  max_inf_a,
+  RANK() OVER(ORDER BY max_inf_a DESC) 
+FROM cte_a
+
 	 
 /**
 Except versus Not In.
-Rank versus dense rank versus row number.
 **/
 
 --additional lists: https://softwareengineering.stackexchange.com/questions/181651/are-these-sql-concepts-for-beginners-intermediate-or-advanced-developers

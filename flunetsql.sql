@@ -356,9 +356,35 @@ SELECT countryareaterritory,
 FROM cte_a
 
 	 
-/**
-Except versus Not In.
-**/
+	 
+--Except versus Not In
+--Except will get the rows from the first query that do not appear in the result set of the second query (compare the function of union, intersect.
+SELECT countryareaterritory, iso_sdate, ah1n12009, inf_a
+FROM flunet_table
+WHERE inf_a > 100
+
+EXCEPT
+
+SELECT countryareaterritory, iso_sdate, ah1n12009, inf_a
+FROM flunet_table
+WHERE ah1n12009 > (.5*inf_a)
+ORDER BY countryareaterritory, iso_sdate DESC
+
+
+-- NOT IN; subqueries
+SELECT countryareaterritory, iso_sdate, ah1n12009, inf_a
+FROM flunet_table
+WHERE inf_a > 100
+AND inf_a NOT IN 
+    (SELECT inf_a 
+	FROM flunet_table
+	WHERE inf_a < ah1n12009*2)
+ORDER BY countryareaterritory, iso_sdate DESC
+--Please consider https://stackoverflow.com/questions/7125291/postgresql-not-in-versus-except-performance-difference-edited-2 and discussion re: differences in EXCEPT and NOT IN, esp. re: null handling.
+
+
+--The above query returns weeks where inf_a was greater than 100 and the ah1n12009 strain made up less than 50% of that total.
+
 
 --additional lists: https://softwareengineering.stackexchange.com/questions/181651/are-these-sql-concepts-for-beginners-intermediate-or-advanced-developers
 --https://medium.com/dp6-us-blog/7-advanced-sql-concepts-you-need-to-know-45fa149ba0b0

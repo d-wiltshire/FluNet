@@ -3,7 +3,7 @@
 
 ## Goal 
 
-The goal of this project is to serve as a teaching tool for intermediate SQL students using PostgreSQL by demonstrating and explaining SQL concepts.
+The goal of this project is to serve as a teaching tool for intermediate SQL students by demonstrating and explaining SQL concepts (using PostgreSQL).
 
 ## About the data
 

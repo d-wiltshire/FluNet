@@ -21,9 +21,10 @@ In general, the data provides information about the number of confirmed cases of
 
 ## Sample Functions
 
-### Self-Joins
-
 ### CTEs
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/d9ca1808-c224-4a56-a452-9efbe10b7067)
+
 
 #### Recursive CTEs
 

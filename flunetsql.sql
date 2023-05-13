@@ -33,7 +33,7 @@ HAVING SUM(inf_a) > 0
 ORDER BY sum_all_a_subtypes DESC
 LIMIT 10;
 
-
+--CTEs
 --Comparing the week with highest prevalence across the WHO regions for subtype_a
 WITH cte_a AS 
 (SELECT 
@@ -58,6 +58,9 @@ LEFT JOIN cte_a
 ON cte_a.sum_all_a_subtypes = cte_b.highest_weekly_total
 ORDER BY cte_b.whoregion ASC;
 
+
+--Recursive CTEs
+--https://www.sqlservertutorial.net/sql-server-basics/sql-server-recursive-cte/
 
 --Compare top 5 weeks relative to region for subtype_a
 /** 
@@ -165,11 +168,6 @@ FROM flunet_table
 ORDER BY countryareaterritory, iso_sdate;
 
 
-
---compare a to b; compare number of positive cases to total number tested; compare a specific a subtype to rest of subtypes compare ten weeks (are there two peaks per year?); connect with Tableau to visualize; get wider data range
-
---Self-Joins
-
 --Correlated Subqueries
 --For correlated subqueries, the query must be re-executed for every row, which increases query runtime.
 
@@ -183,8 +181,7 @@ WHERE inf_a >
                  GROUP BY countryareaterritory)
 ORDER BY countryareaterritory;
 
---Recursive CTEs
---https://www.sqlservertutorial.net/sql-server-basics/sql-server-recursive-cte/
+
 
 
 --CASE WHEN

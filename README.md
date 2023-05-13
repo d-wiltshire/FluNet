@@ -1,6 +1,8 @@
 # FluNet
 **Work in progress**
 
+>>>ADD table of contents with links down the page for demonstrated concepts in Goal section
+
 ## Goal 
 
 The goal of this project is to serve as a teaching tool for intermediate SQL students by demonstrating and explaining SQL concepts (using PostgreSQL).

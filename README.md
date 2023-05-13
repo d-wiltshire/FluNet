@@ -42,4 +42,37 @@ Resources:
 ### Window Functions
 
 
-*Note idiosyncrasies of Postgres relative to MySQL, etc.
+
+### Correlated Subqueries
+
+
+
+### CASE WHEN
+
+
+
+### Date-Time functions
+
+
+
+### User-defined scalar functions
+
+
+
+
+### Calculating running totals with CUBE and ROLLUP
+
+
+
+
+### Pivots
+
+
+### Calculating delta values with LEAD and LAG
+
+
+### RANK
+
+
+
+### EXCEPT versus NOT IN

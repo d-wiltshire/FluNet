@@ -1,8 +1,8 @@
 # FluNet
 **Work in progress**
 
-- [CTEs](#-ctes)
-- [Window Functions](#-window-functions)
+- [CTEs](#ctes)
+- [Window Functions](#window-functions)
 - [Correlated Subqueries](###-correlated-subqueries)
 - [CASE WHEN](###-case-when)
 - [Date-Time Functions](###-date-time-functions)

@@ -5,6 +5,42 @@
 
 - [CTEs](###-ctes)
 - [Window Functions](###-window-functions)
+- [Correlated Subqueries](###-correlated-subqueries)
+- [CASE WHEN](###-case-when)
+- [Date-Time Functions](###-date-time-functions)
+- - [Window Functions](###-window-functions)
+- - [Window Functions](###-window-functions)
+- - [Window Functions](###-window-functions)
+- - [Window Functions](###-window-functions)
+- - [Window Functions](###-window-functions)
+- - [Window Functions](###-window-functions)
+
+
+### Date-Time functions
+
+
+
+### User-defined scalar functions
+
+
+
+
+### Calculating running totals with CUBE and ROLLUP
+
+
+
+
+### Pivots
+
+
+### Calculating delta values with LEAD and LAG
+
+
+### RANK
+
+
+
+### EXCEPT versus NOT IN
 
 ## Goal 
 
@@ -56,16 +92,16 @@ Resources:
 
 
 
-### Date-Time functions
+### Date-Time Functions
 
 
 
-### User-defined scalar functions
+### User-defined Scalar Functions
 
 
 
 
-### Calculating running totals with CUBE and ROLLUP
+### Calculating Running Totals with CUBE and ROLLUP
 
 
 
@@ -73,7 +109,7 @@ Resources:
 ### Pivots
 
 
-### Calculating delta values with LEAD and LAG
+### Calculating Delta Values with LEAD and LAG
 
 
 ### RANK

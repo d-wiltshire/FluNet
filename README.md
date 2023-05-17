@@ -3,15 +3,15 @@
 
 - [CTEs](#ctes)
 - [Window Functions](#window-functions)
-- [Correlated Subqueries](###-correlated-subqueries)
-- [CASE WHEN](###-case-when)
-- [Date-Time Functions](###-date-time-functions)
-- [User-defined Scalar Functions](###-user-defined-scalar-functions)
-- [Calculating Running Totals with CUBE and ROLLUP](###-calculating-running-totals-with-cube-and-rollup)
-- [Pivots](###-pivots)
-- [Calculating Delta Values with LEAD and LAG](###-calculating-delta-values-with-lead-and-lag)
-- [RANK](###-rank)
-- [EXCEPT versus NOT IN](###-except-versus-not-in)
+- [Correlated Subqueries](#correlated-subqueries)
+- [CASE WHEN](#case-when)
+- [Date-Time Functions](#date-time-functions)
+- [User-defined Scalar Functions](#user-defined-scalar-functions)
+- [Calculating Running Totals with CUBE and ROLLUP](#calculating-running-totals-with-cube-and-rollup)
+- [Pivots](#pivots)
+- [Calculating Delta Values with LEAD and LAG](#calculating-delta-values-with-lead-and-lag)
+- [RANK](#rank)
+- [EXCEPT versus NOT IN](#except-versus-not-in)
 
 
 ## Goal 

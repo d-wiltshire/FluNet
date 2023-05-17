@@ -3,6 +3,9 @@
 
 >>>ADD table of contents with links down the page for demonstrated concepts in Goal section
 
+[CTEs](###-ctes)
+[Window Functions](###-window-functions)
+
 ## Goal 
 
 The goal of this project is to serve as a teaching tool for intermediate SQL students by demonstrating and explaining SQL concepts (using PostgreSQL).

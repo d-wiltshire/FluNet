@@ -3,8 +3,8 @@
 
 >>>ADD table of contents with links down the page for demonstrated concepts in Goal section
 
-[CTEs](###-ctes)
-[Window Functions](###-window-functions)
+- [CTEs](###-ctes)
+- [Window Functions](###-window-functions)
 
 ## Goal 
 

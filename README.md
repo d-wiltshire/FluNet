@@ -1,8 +1,6 @@
 # FluNet
 **Work in progress**
 
->>>ADD table of contents with links down the page for demonstrated concepts in Goal section
-
 - [CTEs](###-ctes)
 - [Window Functions](###-window-functions)
 - [Correlated Subqueries](###-correlated-subqueries)
@@ -12,21 +10,9 @@
 - [Calculating Running Totals with CUBE and ROLLUP](###-calculating-running-totals-with-cube-and-rollup)
 - [Pivots](###-pivots)
 - [Calculating Delta Values with LEAD and LAG](###-calculating-delta-values-with-lead-and-lag)
-- - [Window Functions](###-window-functions)
-- - [Window Functions](###-window-functions)
+- [RANK](###-rank)
+- [EXCEPT versus NOT IN](###-except-versus-not-in)
 
-
-### Pivots
-
-
-### Calculating delta values with LEAD and LAG
-
-
-### RANK
-
-
-
-### EXCEPT versus NOT IN
 
 ## Goal 
 

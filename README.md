@@ -8,26 +8,12 @@
 - [Correlated Subqueries](###-correlated-subqueries)
 - [CASE WHEN](###-case-when)
 - [Date-Time Functions](###-date-time-functions)
+- [User-defined Scalar Functions](###-user-defined-scalar-functions)
+- [Calculating Running Totals with CUBE and ROLLUP](###-calculating-running-totals-with-cube-and-rollup)
+- [Pivots](###-pivots)
+- [Calculating Delta Values with LEAD and LAG](###-calculating-delta-values-with-lead-and-lag)
 - - [Window Functions](###-window-functions)
 - - [Window Functions](###-window-functions)
-- - [Window Functions](###-window-functions)
-- - [Window Functions](###-window-functions)
-- - [Window Functions](###-window-functions)
-- - [Window Functions](###-window-functions)
-
-
-### Date-Time functions
-
-
-
-### User-defined scalar functions
-
-
-
-
-### Calculating running totals with CUBE and ROLLUP
-
-
 
 
 ### Pivots

@@ -53,6 +53,15 @@ Resources:
 * https://builtin.com/data-science/recursive-sql
 
 ### Window Functions
+Window functions are a preferred way to perform calculations across sets of rows. For example, if you wanted to find the top N weeks of the year for subtype A prevalence for each WHO Region, you could use a series of UNION statements, e.g.
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/c25b7e93-c4ab-4cec-abab-f8302e5872c0)
+ 
+This would require you to repeat this code for every WHO Region, specifying the region by typing it out. It's better practice to automate rather than typing out by hand, and you can accomplish this with window functions that rank by partition, e.g.:
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/b4f88ba5-d9c1-4d89-8cdb-b18edd1de775)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/d0dd7d98-e96b-4881-823e-a9286afa9e1c)
 
 
 

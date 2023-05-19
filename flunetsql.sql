@@ -75,7 +75,7 @@ WHERE whoregion = 'AMR'
 GROUP BY whoregion, iso_week
 HAVING SUM(inf_a) > 0
 ORDER BY sum_all_a_subtypes DESC
-LIMIT 10
+LIMIT 5
 
 UNION
 
@@ -88,7 +88,7 @@ WHERE whoregion = 'EUR'
 GROUP BY whoregion, iso_week
 HAVING SUM(inf_a) > 0
 ORDER BY sum_all_a_subtypes DESC
-LIMIT 10
+LIMIT 5
 
 etc.;  **/
 

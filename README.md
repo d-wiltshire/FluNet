@@ -88,28 +88,45 @@ Adding PARTITION BY to this code allows you to view all the running totals, orde
 
 
 
+[Back to top](#FluNet)
+
 ### Date-Time Functions
 
 
+
+[Back to top](#FluNet)
 
 ### User-defined Scalar Functions
 
 
 
+[Back to top](#FluNet)
 
 ### Calculating Running Totals with CUBE and ROLLUP
 
 
 
+[Back to top](#FluNet)
 
 ### Pivots
 
 
+[Back to top](#FluNet)
+
 ### Calculating Delta Values with LEAD and LAG
 
+
+
+[Back to top](#FluNet)
 
 ### RANK
 
 
 
+[Back to top](#FluNet)
+
 ### EXCEPT versus NOT IN
+
+
+
+[Back to top](#FluNet)

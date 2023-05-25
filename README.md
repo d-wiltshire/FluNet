@@ -82,6 +82,8 @@ Adding PARTITION BY to this code allows you to view all the running totals, orde
 
 
 
+[Back to top](#FluNet)
+
 ### CASE WHEN
 
 

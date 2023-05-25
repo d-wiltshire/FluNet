@@ -38,6 +38,7 @@ In general, the data provides information about the number of confirmed cases of
 
 For example, we can group by the week of the year (i.e., 1-52) to determine which weeks of the year have the highest prevalence of subtype A (and check out the relative frequencies of subtype B at the same time).  
 
+[Back to top](#FluNet)
 
 ## Demonstrating Concepts
 
@@ -46,11 +47,15 @@ For example, we can group by the week of the year (i.e., 1-52) to determine whic
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/d9ca1808-c224-4a56-a452-9efbe10b7067)
 
 
+[Back to top](#FluNet)
+
 #### Recursive CTEs
 
 Resources: 
 * https://www.sqlservertutorial.net/sql-server-basics/sql-server-recursive-cte/
 * https://builtin.com/data-science/recursive-sql
+
+[Back to top](#FluNet)
 
 ### Window Functions
 Window functions are a preferred way to perform calculations across sets of rows. For example, if you wanted to find the top N weeks of the year for subtype A prevalence for each WHO Region, you could use a series of UNION statements, e.g.
@@ -77,6 +82,7 @@ Adding PARTITION BY to this code allows you to view all the running totals, orde
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/9a82be33-969b-4d9b-898a-09210e463ce4)
 
 
+[Back to top](#FluNet)
 
 ### Correlated Subqueries
 

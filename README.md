@@ -85,7 +85,15 @@ Adding PARTITION BY to this code allows you to view all the running totals, orde
 [Back to top](#FluNet)
 
 ### Correlated Subqueries
+For correlated subqueries, the query must be re-executed for every row, which increases query runtime.
 
+The following example uses a correlated subquery to identify the weeks for each country where the inf_a levels are higher than average. For every row in the outer query, the subquery computes the average inf_a for the given country and compares it to the inf_a at that row in the outer query. 
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/44853ddb-8862-4c31-8885-14ee1d692e9b)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/8fc78ab6-8455-4f9d-be20-afa2691c9758)
+
+On my machine, this query took over 26 seconds to complete. To compare, the previous query (using PARTITION BY, above) took only 86 msec. 
 
 
 [Back to top](#FluNet)

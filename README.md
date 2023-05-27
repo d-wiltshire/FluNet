@@ -107,6 +107,17 @@ On my machine, this query took over 26 seconds to complete. To compare, the prev
 ### Date-Time Functions
 
 
+Date-time functions are specific to the SQL you are using; PostgreSQL differs from MySQL, SQL Server, etc. 
+More on PostgreSQL date-time functions here: https://www.sqlshack.com/working-with-date-and-time-functions-in-postgresql/
+
+There are many additional examples of PostgreSQL date-time functions: https://www.postgresql.org/docs/current/functions-datetime.html
+
+EXTRACT(field FROM source) used with Quarter above; can also be used with day, month, year, day of week (DOW), etc.:
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/97b3a1c5-6726-4899-b4ae-4b476476b418)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/9f0f39bc-7c55-46a7-9589-b759802e49d6)
+
 
 [Back to top](#FluNet)
 

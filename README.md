@@ -45,8 +45,8 @@ For example, we can group by the week of the year (i.e., 1-52) to determine whic
 
 ### CTEs
 
-<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/d9ca1808-c224-4a56-a452-9efbe10b7067" height="350">
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/d9ca1808-c224-4a56-a452-9efbe10b7067)
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/d9ca1808-c224-4a56-a452-9efbe10b7067" height="450">
+
 
 
 [Back to top](#FluNet)

@@ -33,7 +33,7 @@ In general, the data provides information about the number of confirmed cases of
 
 ### Sample query
 
-<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/7be3ee72-53aa-4812-a5ab-bd22292861a1)" height="250">
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/7be3ee72-53aa-4812-a5ab-bd22292861a1" height="250">
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/05a51ca6-5d2e-4ea7-8ebb-2b98dd2b943e)
 
@@ -45,6 +45,7 @@ For example, we can group by the week of the year (i.e., 1-52) to determine whic
 
 ### CTEs
 
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/d9ca1808-c224-4a56-a452-9efbe10b7067" height="350">
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/d9ca1808-c224-4a56-a452-9efbe10b7067)
 
 

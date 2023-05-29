@@ -141,7 +141,8 @@ EXTRACT(field FROM source), used with quarter above, can also be used with day, 
 
 ### Calculating Running Totals with CUBE and ROLLUP
 
-
+CUBE and ROLLUP can be used to identify running totals
+More here: https://docs.oracle.com/cd/F49540_01/DOC/server.815/a68003/rollup_c.htm
 
 [Back to top](#FluNet)
 

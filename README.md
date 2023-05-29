@@ -33,6 +33,7 @@ In general, the data provides information about the number of confirmed cases of
 
 ### Sample query
 
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/7be3ee72-53aa-4812-a5ab-bd22292861a1)" width="100" height="100">
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/7be3ee72-53aa-4812-a5ab-bd22292861a1 | width=100)
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/05a51ca6-5d2e-4ea7-8ebb-2b98dd2b943e)

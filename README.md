@@ -165,6 +165,12 @@ More here: https://docs.oracle.com/cd/F49540_01/DOC/server.815/a68003/rollup_c.h
 
 ### EXCEPT versus NOT IN
 
+EXCEPT will return the rows from the first query that do not appear in the result set of the second query (compare the function of union, intersect). In this example, we're looking for the rows (relative to country and date) where the inf_a total is higher than 100, and the ah1n12009 figure comprises less than 50% of that inf_a total. EXCEPT excludes the rows in which ah1n12009 comprises more than 50% of the total.
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/f277b43c-8cd4-44b9-9159-ea88e01d6229)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/80a7ac49-762a-4d21-9e2d-e36751bd5b18)
+
 
 
 [Back to top](#FluNet)

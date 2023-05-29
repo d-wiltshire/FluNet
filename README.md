@@ -134,7 +134,7 @@ EXTRACT(field FROM source), used with quarter above, can also be used with day, 
 [Back to top](#FluNet)
 
 ### User-defined Scalar Functions
-
+>> delete this section?
 
 
 [Back to top](#FluNet)

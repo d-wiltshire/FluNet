@@ -150,7 +150,10 @@ EXTRACT(field FROM source), used with quarter above, can also be used with day, 
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/c75f2a15-cb98-4b90-b676-f47196c78d25)
 
 ### User-defined Scalar Functions
->> delete this section?
+
+Scalar functions are functions that return one row per row of data (unlike aggregate functions, which aggregate multiple rows into one value). Scalar functions can be built-in or user-defined. For example, ROUND() is a built-in scalar function that rounds each given value to a specified number of decimal places. 
+
+Users can define their own scalar functions and call these functions to transform their data. 
 
 
 [Back to top](#FluNet)

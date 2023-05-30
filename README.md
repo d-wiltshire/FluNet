@@ -41,6 +41,9 @@ For example, we can group by the week of the year (i.e., 1-52) to determine whic
 
 [Back to top](#FluNet)
 
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/5afb9ada-d07c-4d27-8785-221bbec2544b)
+
+
 ## Demonstrating Concepts
 
 ### CTEs
@@ -56,6 +59,7 @@ In the query below, the first CTE creates a result set with the region, week of 
 --REWRITE THIS USING A WINDOW FUNCTION
 
 [Back to top](#FluNet)
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/25d28fe5-3b00-4417-bd73-f57e260a26b0)
 
 #### Recursive CTEs
 
@@ -64,6 +68,7 @@ Resources:
 * https://builtin.com/data-science/recursive-sql
 
 [Back to top](#FluNet)
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/71eb1327-5c74-4128-9d4f-38fafc9fce6b)
 
 ### Window Functions
 Window functions are a preferred way to perform calculations across sets of rows. For example, if you wanted to find the top N weeks of the year for subtype A prevalence for each WHO Region, you could use a series of UNION statements, e.g.
@@ -91,6 +96,7 @@ Adding PARTITION BY to this code allows you to view all the running totals, orde
 
 
 [Back to top](#FluNet)
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/bc91116e-de80-47c1-98cf-60a2804da309)
 
 ### Correlated Subqueries
 For correlated subqueries, the query must be re-executed for every row, which increases query runtime.
@@ -105,6 +111,7 @@ On my machine, this query took over 26 seconds to complete. To compare, the prev
 
 
 [Back to top](#FluNet)
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/62f6103e-bc09-4ed8-adb0-e4fc3a2e7c66)
 
 ### CASE WHEN
 CASE WHEN allows you to pull different information in SELECT statements depending on certain parameters you set. In the example below, when the week of the year is in the first quarter, the statement will return "Q1" in a new column; when iso_week is in the second quarter of the year, the statement will return "Q2", and so on, where inf_a is over 100.
@@ -119,6 +126,7 @@ Using CASE WHEN to hard-code information isn't the most elegant way to gain this
 
 
 [Back to top](#FluNet)
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/e28fdc7d-dd6a-47b8-afa8-68c403b1d88a)
 
 ### Date-Time Functions
 
@@ -139,6 +147,7 @@ EXTRACT(field FROM source), used with quarter above, can also be used with day, 
 
 
 [Back to top](#FluNet)
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/c75f2a15-cb98-4b90-b676-f47196c78d25)
 
 ### User-defined Scalar Functions
 >> delete this section?
@@ -152,23 +161,27 @@ CUBE and ROLLUP can be used to identify running totals
 More here: https://docs.oracle.com/cd/F49540_01/DOC/server.815/a68003/rollup_c.htm
 
 [Back to top](#FluNet)
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/b434a42b-d91a-4c58-9c18-1ae267040382)
 
 ### Pivots
 
 
 [Back to top](#FluNet)
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/5daabcb5-5e39-409e-a189-b6b1eb419e1e)
 
 ### Calculating Delta Values with LEAD and LAG
 
 
 
 [Back to top](#FluNet)
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/34f173f1-d041-410b-95fb-aafd0258fa35)
 
 ### RANK
 
 
 
 [Back to top](#FluNet)
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/a4873a8d-a404-4324-9e9d-db9db3fb2b2d)
 
 ### EXCEPT versus NOT IN
 

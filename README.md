@@ -155,9 +155,10 @@ Scalar functions are functions that return one row per row of data (unlike aggre
 
 Users can define their own scalar functions and call these functions to transform their data. 
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/9d868ccb-8b66-4377-af71-e16b941a1578)
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/61a2ab7d-58f9-4384-8d2d-392293ad5c7e)
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/5826cb0b-62a0-47c4-bb1e-63558bb52a0f)
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/ac32f5db-7934-4cd9-b3a2-a0f3b2424d7c)
+
 
 Resources:
 https://www.postgresql.org/docs/current/xfunc-sql.html

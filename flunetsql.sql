@@ -219,11 +219,7 @@ GROUP BY country, quarter
 HAVING COUNT(quarter) > 10
 ORDER BY COUNT(quarter) DESC, country;
 
---Date-time functions are specific to the SQL you are using; PostgreSQL differs from MySQL, SQL Server, etc. 
---More on PostgreSQL date-time functions here: https://www.sqlshack.com/working-with-date-and-time-functions-in-postgresql/
 
---Additional examples of PostgreSQL date-time functions
---There are many: https://www.postgresql.org/docs/current/functions-datetime.html
 --EXTRACT(field FROM source) used with Quarter above; can also be used with day, month, year, day of week (DOW), etc.
 
 SELECT countryareaterritory,
@@ -246,15 +242,38 @@ WHERE current_date - iso_sdate < 100
 AND inf_a > 50;
 
 
---User-defined functions (scalar functions)
+--User-defined scalar functions
+CREATE FUNCTION ishigh(val1 integer)
+RETURNS varchar(10) AS $$
+BEGIN
+	IF (val1 > 100) THEN
+		RETURN 'YES';
+	ELSE
+		RETURN 'NO';
+	END IF;
+END $$
+LANGUAGE PLPGSQL;
+
+SELECT countryareaterritory, iso_sdate, ishigh(inf_a)
+FROM flunet_table
+
+
+CREATE FUNCTION total(num1 integer, num2 integer) 
+RETURNS integer AS $$
+BEGIN
+RETURN num1 + num2;
+END; $$
+LANGUAGE PLPGSQL;
+
+SELECT countryareaterritory, iso_sdate, total(inf_a, inf_b)
+FROM flunet_table
 
 
 --Join to unrelated table? Other tables from this org?
 
 
 --Calculating running totals with CUBE and ROLLUP:
---CUBE
---Similar to ROLLUP
+--CUBE(similar to ROLLUP)
 
 SELECT
    COALESCE(whoregion, '-') region,
@@ -354,8 +373,7 @@ FROM cte_a
 
 	 
 	 
---Except versus Not In
---Except will get the rows from the first query that do not appear in the result set of the second query (compare the function of union, intersect.
+--EXCEPT versus NOT IN
 SELECT countryareaterritory, iso_sdate, ah1n12009, inf_a
 FROM flunet_table
 WHERE inf_a > 100

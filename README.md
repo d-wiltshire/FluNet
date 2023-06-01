@@ -183,13 +183,21 @@ More here: https://docs.oracle.com/cd/F49540_01/DOC/server.815/a68003/rollup_c.h
 
 ### Calculating Delta Values with LEAD and LAG
 
-LEAD() and LAG() allow you to refer to a previous or future row relative to a given row. For example, if you would like to compare a value to that same value in the previous row to find the change, you can use LAG(). LEAD() and LAG() are also window functions.
+LEAD() and LAG() allow you to refer to a future or previous row relative to a given row. For example, if you would like to compare a value to that same value in the previous row to find the change, you can use LAG(). LEAD() and LAG() are also window functions.
 
 The following example returns the date, the inf_a number, and the inf_a number from the most recent previous date (i.e., the row before, when the data is organized by date). You can specify a different offset (for example, if you wanted to compare the inf_a figure from two days before), but since we haven't specified one here, we are using the default offset, which is 1.
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/946581c2-13b0-47ce-bd06-5dee5d911b4a)
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/377023a6-3a42-43af-9ff6-9523cac3e5b3)
+
+
+LEAD() works similarly to LAG(), but it references a future row rather than a previous row:
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/57018de8-c885-44de-abb8-69beb6c61f2d)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/b6635226-2cf3-4dd4-a5ab-4f7d1a8c9491)
+
 
 #### Calculating Variance
 

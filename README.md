@@ -183,14 +183,26 @@ More here: https://docs.oracle.com/cd/F49540_01/DOC/server.815/a68003/rollup_c.h
 
 ### Calculating Delta Values with LEAD and LAG
 
-LEAD() and LAG() allow you to refer to a previous or future row relative to a given row. For example, if you would like to compare a value to that same value in the previous row to find the change, you can use LAG().
+LEAD() and LAG() allow you to refer to a previous or future row relative to a given row. For example, if you would like to compare a value to that same value in the previous row to find the change, you can use LAG(). LEAD() and LAG() are also window functions.
 
-The following example returns the date, the inf_a number, and the inf_a number from the most recent previous date (i.e., the row before, when the data is organized by date):
+The following example returns the date, the inf_a number, and the inf_a number from the most recent previous date (i.e., the row before, when the data is organized by date). You can specify a different offset (for example, if you wanted to compare the inf_a figure from two days before), but since we haven't specified one here, we are using the default offset, which is 1.
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/946581c2-13b0-47ce-bd06-5dee5d911b4a)
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/377023a6-3a42-43af-9ff6-9523cac3e5b3)
 
+#### Calculating Variance
+
+You can also use these window functions to calculate variance. The example below uses the previous code in a CTE to establish a result set with the current and previous day's amounts, and then, in the main query, uses those to calculate the difference and the variance between the two figures.
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/4645af8c-776e-427f-ba0e-90ca468fa2e3)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/2eea7f45-ae0d-41ae-8165-33631476097a)
+
+A few notes on this code:
+* CAST is needed here in the CTE because when Postgres divides two integers, the result will also be an integer with remainder discarded. Therefore we need to cast one as a non-integer. https://datacomy.com/sql/postgresql/division/
+* In addition, Postgres does not support the use of ROUND with a double precision type, so we must cast as NUMERIC to use ROUND. https://pgsql-sql.postgresql.narkive.com/835yQ640/sql-error-function-round-double-precision-integer-does-not-exist
+* The double colon :: is a Postgres-specific alternative to CAST. https://stackoverflow.com/questions/15537709/what-does-do-in-postgresql
 
 Resources:
 * https://www.postgresqltutorial.com/postgresql-window-function/postgresql-lag-function/
@@ -201,8 +213,13 @@ Resources:
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/34f173f1-d041-410b-95fb-aafd0258fa35)
 
 ### RANK
+RANK() is also a window function.
 
 
+Resources:
+* https://www.postgresqltutorial.com/postgresql-window-function/postgresql-rank-function/
+* https://www.postgresqltutorial.com/postgresql-window-function/postgresql-dense_rank-function/
+* https://www.postgresqltutorial.com/postgresql-window-function/postgresql-row_number/
 
 [Back to top](#FluNet)
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/a4873a8d-a404-4324-9e9d-db9db3fb2b2d)

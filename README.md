@@ -84,13 +84,13 @@ This would require you to repeat this code for every WHO Region, specifying the 
 
 You can also use window functions to calculate a running total (more info here: https://learnsql.com/blog/what-is-a-running-total-and-how-to-compute-it-in-sql/), here specified only for totals from Algeria:
 
-<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/a8034c74-5938-4d62-a35c-c2e4561b669e" height="200">
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/a8034c74-5938-4d62-a35c-c2e4561b669e" height="150">
 
-<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/3d3b75a4-d468-4277-8206-84e50d148d39" height="350">
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/3d3b75a4-d468-4277-8206-84e50d148d39" height="320">
 
 Adding PARTITION BY to this code allows you to view all the running totals, ordered by country:
 
-<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/9befbdb7-8eaf-4338-8fef-09de9788583d" height="200">
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/9befbdb7-8eaf-4338-8fef-09de9788583d" height="180">
 
 <img src="https://github.com/d-wiltshire/FluNet/assets/100863488/9a82be33-969b-4d9b-898a-09210e463ce4" height="400">
 

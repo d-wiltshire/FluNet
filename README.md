@@ -221,13 +221,29 @@ Resources:
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/34f173f1-d041-410b-95fb-aafd0258fa35)
 
 ### RANK
-RANK() is also a window function.
+RANK() is also a window function. RANK() is very similar to ROW_NUMBER() and DENSE_RANK(), so similar that I will discuss only one of the three here. All three will create a "rank" or order the result set by another value. ROW_NUMBER() will create unique values for all rows, similar to an index, even if the value being used to "order" is duplicated. 
+
+With RANK(), rows with the same value are ranked with the same number. We can see this toward the bottom of the result set here:
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/fdcdaaa0-a4d2-4a0b-b768-46faf7d3fe60)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/f95303d1-b77f-4edc-a0fa-17d0d6b1d078)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/0e52084f-571c-4541-b6a2-7fcafab63799)
+
+In the above code, the CTE identifies the highest value for inf_a for each country. The main query then ranks that result set so that we can see these highest values ranked against one another.
+
+
+
+
+This is not true with dense_rank.
 
 
 Resources:
 * https://www.postgresqltutorial.com/postgresql-window-function/postgresql-rank-function/
 * https://www.postgresqltutorial.com/postgresql-window-function/postgresql-dense_rank-function/
 * https://www.postgresqltutorial.com/postgresql-window-function/postgresql-row_number/
+* https://www.eversql.com/rank-vs-dense_rank-vs-row_number-in-postgresql/
 
 [Back to top](#FluNet)
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/a4873a8d-a404-4324-9e9d-db9db3fb2b2d)

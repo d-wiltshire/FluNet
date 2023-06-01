@@ -233,10 +233,9 @@ With RANK(), rows with the same value are ranked with the same number. We can se
 
 In the above code, the CTE identifies the highest value for inf_a for each country. The main query then ranks that result set so that we can see these highest values ranked against one another.
 
+In the illustration above, with RANK(), when a value used to order the set is duplicated, the "rank" skips a number. We can see this illustrated with the 141st rank above; since there are two countries with the same value for max_inf_a, there is no country listed at rank 142. This would not be true with DENSE_RANK; with DENSE_RANK(), identical values will receive the same rank, but the following rank will not be "skipped".
 
-
-
-This is not true with dense_rank.
+In short, you can use RANK(), ROW_NUMBER(), or DENSE_RANK() to create rankings for your data. To choose among them, you just need to decide how you want to treat your duplicate values vis-à-vis the ranking system.
 
 
 Resources:

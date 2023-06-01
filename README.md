@@ -183,6 +183,18 @@ More here: https://docs.oracle.com/cd/F49540_01/DOC/server.815/a68003/rollup_c.h
 
 ### Calculating Delta Values with LEAD and LAG
 
+LEAD() and LAG() allow you to refer to a previous or future row relative to a given row. For example, if you would like to compare a value to that same value in the previous row to find the change, you can use LAG().
+
+The following example returns the date, the inf_a number, and the inf_a number from the most recent previous date (i.e., the row before, when the data is organized by date):
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/946581c2-13b0-47ce-bd06-5dee5d911b4a)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/377023a6-3a42-43af-9ff6-9523cac3e5b3)
+
+
+Resources:
+* https://www.postgresqltutorial.com/postgresql-window-function/postgresql-lag-function/
+* https://www.postgresqltutorial.com/postgresql-window-function/postgresql-lead-function/
 
 
 [Back to top](#FluNet)

@@ -84,15 +84,15 @@ This would require you to repeat this code for every WHO Region, specifying the 
 
 You can also use window functions to calculate a running total (more info here: https://learnsql.com/blog/what-is-a-running-total-and-how-to-compute-it-in-sql/), here specified only for totals from Algeria:
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/a8034c74-5938-4d62-a35c-c2e4561b669e)
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/a8034c74-5938-4d62-a35c-c2e4561b669e" height="400">
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/3d3b75a4-d468-4277-8206-84e50d148d39)
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/3d3b75a4-d468-4277-8206-84e50d148d39" height="400">
 
 Adding PARTITION BY to this code allows you to view all the running totals, ordered by country:
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/9befbdb7-8eaf-4338-8fef-09de9788583d)
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/9befbdb7-8eaf-4338-8fef-09de9788583d" height="400">
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/9a82be33-969b-4d9b-898a-09210e463ce4)
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/9a82be33-969b-4d9b-898a-09210e463ce4" height="400">
 
 
 [Back to top](#FluNet)
@@ -103,9 +103,9 @@ For correlated subqueries, the query must be re-executed for every row, which in
 
 The following example uses a correlated subquery to identify the weeks for each country where the inf_a levels are higher than average. For every row in the outer query, the subquery computes the average inf_a for the given country and compares it to the inf_a at that row in the outer query. 
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/44853ddb-8862-4c31-8885-14ee1d692e9b)
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/44853ddb-8862-4c31-8885-14ee1d692e9b" height="400">
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/8fc78ab6-8455-4f9d-be20-afa2691c9758)
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/8fc78ab6-8455-4f9d-be20-afa2691c9758" height="400">
 
 On my machine, this query took over 26 seconds to complete. To compare, the previous query (using PARTITION BY, above) took only 86 msec. 
 
@@ -116,11 +116,11 @@ On my machine, this query took over 26 seconds to complete. To compare, the prev
 ### CASE WHEN
 CASE WHEN allows you to pull different information in SELECT statements depending on certain parameters you set. In the example below, when the week of the year is in the first quarter, the statement will return "Q1" in a new column; when iso_week is in the second quarter of the year, the statement will return "Q2", and so on, where inf_a is over 100.
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/b11563f6-f2ca-41de-99b0-653da3b6bb18)
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/b11563f6-f2ca-41de-99b0-653da3b6bb18" height="400">
 
 The main part of the query, under the CTE, then counts the number of rows per quarter and country and sorts them in descending order. The result is that we see the calendar quarters with the highest number of weeks with high levels of inf_a. It's no surprise that Q1 and Q4 (i.e., flu season!) have the most weeks with high incidences of inf_a.
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/30741f55-4570-4705-ac95-915c944d524e)
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/30741f55-4570-4705-ac95-915c944d524e" height="400">
 
 Using CASE WHEN to hard-code information isn't the most elegant way to gain this information, however. Using the date-time EXTRACT function to extract the quarter makes the process simpler, as seen below.
 
@@ -132,7 +132,7 @@ Using CASE WHEN to hard-code information isn't the most elegant way to gain this
 
 The previous query can be rewritten in the following way:
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/25927ac4-abda-4832-8761-dfb516a8ea2f)
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/25927ac4-abda-4832-8761-dfb516a8ea2f" height="400">
 
 
 

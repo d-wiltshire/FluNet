@@ -120,7 +120,7 @@ CASE WHEN allows you to pull different information in SELECT statements dependin
 
 The main part of the query, under the CTE, then counts the number of rows per quarter and country and sorts them in descending order. The result is that we see the calendar quarters with the highest number of weeks with high levels of inf_a. It's no surprise that Q1 and Q4 (i.e., flu season!) have the most weeks with high incidences of inf_a.
 
-<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/30741f55-4570-4705-ac95-915c944d524e" height="400">
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/30741f55-4570-4705-ac95-915c944d524e" height="300">
 
 Using CASE WHEN to hard-code information isn't the most elegant way to gain this information, however. Using the date-time EXTRACT function to extract the quarter makes the process simpler, as seen below.
 
@@ -132,7 +132,7 @@ Using CASE WHEN to hard-code information isn't the most elegant way to gain this
 
 The previous query can be rewritten in the following way:
 
-<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/25927ac4-abda-4832-8761-dfb516a8ea2f" height="400">
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/25927ac4-abda-4832-8761-dfb516a8ea2f" height="300">
 
 
 

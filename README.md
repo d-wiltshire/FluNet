@@ -79,7 +79,7 @@ This would require you to repeat this code for every WHO Region, specifying the 
 
 You can also use window functions to calculate a running total (more info here: https://learnsql.com/blog/what-is-a-running-total-and-how-to-compute-it-in-sql/), here specified only for totals from Algeria:
 
-<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/a8034c74-5938-4d62-a35c-c2e4561b669e" height="150">
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/363083d9-dbef-4cf4-b47e-949e3192b27a)
 
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/bc91116e-de80-47c1-98cf-60a2804da309)
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/2ae7def8-4957-4c9e-a920-24ac8ba8f728)

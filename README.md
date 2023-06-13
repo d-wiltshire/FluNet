@@ -81,6 +81,7 @@ You can also use window functions to calculate a running total (more info here: 
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/363083d9-dbef-4cf4-b47e-949e3192b27a)
 
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/f6552f8c-7f9b-4317-b11a-d6cb87f44092)
 
 
 Adding PARTITION BY to this code allows you to view all the running totals, ordered by country:

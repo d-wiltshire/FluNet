@@ -1,5 +1,4 @@
 # FluNet
-**Work in progress**
 
 Table of contents:
 - [CTEs](#ctes)

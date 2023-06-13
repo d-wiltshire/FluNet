@@ -39,6 +39,7 @@ In general, the data provides information about the number of confirmed cases of
 For example, we can group by the week of the year (i.e., 1-52) to determine which weeks of the year have the highest prevalence of subtype A (and check out the relative frequencies of subtype B at the same time).  
 
 [Back to top](#FluNet)
+
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/5afb9ada-d07c-4d27-8785-221bbec2544b)
 
 
@@ -56,6 +57,7 @@ In the query below, the first CTE creates a result set with the region, week of 
 
 
 [Back to top](#FluNet)
+
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/25d28fe5-3b00-4417-bd73-f57e260a26b0)
 
 #### Recursive CTEs
@@ -65,6 +67,7 @@ Resources:
 * https://builtin.com/data-science/recursive-sql
 
 [Back to top](#FluNet)
+
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/71eb1327-5c74-4128-9d4f-38fafc9fce6b)
 
 
@@ -124,6 +127,7 @@ Using CASE WHEN to hard-code information isn't the most elegant way to gain this
 
 
 [Back to top](#FluNet)
+
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/e28fdc7d-dd6a-47b8-afa8-68c403b1d88a)
 
 ### Date-Time Functions
@@ -145,6 +149,7 @@ EXTRACT(field FROM source), used with quarter above, can also be used with day, 
 
 
 [Back to top](#FluNet)
+
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/c75f2a15-cb98-4b90-b676-f47196c78d25)
 
 ### User-defined Scalar Functions
@@ -165,19 +170,15 @@ https://www.sqlservercentral.com/articles/postgresql-user-defined-functions
 
 [Back to top](#FluNet)
 
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/b434a42b-d91a-4c58-9c18-1ae267040382)
+
 ### Calculating Running Totals with CUBE and ROLLUP
 
 CUBE and ROLLUP can be used to identify running totals
 More here: https://docs.oracle.com/cd/F49540_01/DOC/server.815/a68003/rollup_c.htm
 
-[Back to top](#FluNet)
-![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/b434a42b-d91a-4c58-9c18-1ae267040382)
-
-### Pivots
 
 
-[Back to top](#FluNet)
-![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/5daabcb5-5e39-409e-a189-b6b1eb419e1e)
 
 ### Calculating Delta Values with LEAD and LAG
 
@@ -196,6 +197,9 @@ LEAD() works similarly to LAG(), but it references a future row rather than a pr
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/b6635226-2cf3-4dd4-a5ab-4f7d1a8c9491)
 
+[Back to top](#FluNet)
+
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/b434a42b-d91a-4c58-9c18-1ae267040382)
 
 #### Calculating Variance
 

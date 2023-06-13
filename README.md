@@ -56,10 +56,6 @@ In the query below, the first CTE creates a result set with the region, week of 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/6f765b57-a722-4555-b9f9-ff6495272708)
 
 
-[Back to top](#FluNet)
-
-![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/25d28fe5-3b00-4417-bd73-f57e260a26b0)
-
 Learn about recursive CTEs here:
 * https://www.sqlservertutorial.net/sql-server-basics/sql-server-recursive-cte/
 * https://builtin.com/data-science/recursive-sql
@@ -85,7 +81,9 @@ You can also use window functions to calculate a running total (more info here: 
 
 <img src="https://github.com/d-wiltshire/FluNet/assets/100863488/a8034c74-5938-4d62-a35c-c2e4561b669e" height="150">
 
+
 <img src="https://github.com/d-wiltshire/FluNet/assets/100863488/3d3b75a4-d468-4277-8206-84e50d148d39" height="320">
+
 
 Adding PARTITION BY to this code allows you to view all the running totals, ordered by country:
 

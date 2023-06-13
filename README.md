@@ -54,7 +54,6 @@ In the query below, the first CTE creates a result set with the region, week of 
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/6f765b57-a722-4555-b9f9-ff6495272708)
 
---REWRITE THIS USING A WINDOW FUNCTION
 
 [Back to top](#FluNet)
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/25d28fe5-3b00-4417-bd73-f57e260a26b0)

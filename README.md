@@ -175,7 +175,9 @@ https://www.sqlservercentral.com/articles/postgresql-user-defined-functions
 CUBE and ROLLUP can be used to identify running totals
 More here: https://docs.oracle.com/cd/F49540_01/DOC/server.815/a68003/rollup_c.htm
 
+[Back to top](#FluNet)
 
+![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/b434a42b-d91a-4c58-9c18-1ae267040382)
 
 
 ### Calculating Delta Values with LEAD and LAG
@@ -199,7 +201,7 @@ LEAD() works similarly to LAG(), but it references a future row rather than a pr
 
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/b434a42b-d91a-4c58-9c18-1ae267040382)
 
-#### Calculating Variance
+#### Calculating Variance with LEAD and LAG
 
 You can also use these window functions to calculate variance. The example below uses the previous code in a CTE to establish a result set with the current and previous day's amounts, and then, in the main query, uses those to calculate the difference and the variance between the two figures.
 

@@ -60,9 +60,7 @@ In the query below, the first CTE creates a result set with the region, week of 
 
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/25d28fe5-3b00-4417-bd73-f57e260a26b0)
 
-#### Recursive CTEs
-
-Resources: 
+Learn about recursive CTEs here:
 * https://www.sqlservertutorial.net/sql-server-basics/sql-server-recursive-cte/
 * https://builtin.com/data-science/recursive-sql
 
@@ -97,6 +95,7 @@ Adding PARTITION BY to this code allows you to view all the running totals, orde
 
 
 [Back to top](#FluNet)
+
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/bc91116e-de80-47c1-98cf-60a2804da309)
 
 ### Correlated Subqueries

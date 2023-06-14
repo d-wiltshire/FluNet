@@ -182,7 +182,7 @@ ROLLUP will produce subtotals and totals, and it assumes a hierarchy of ROLLUP i
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/01b8ef5b-8102-4d18-8e82-b35d9b8c25f8)
 
 
-CUBE offers the functionality of ROLLUP, and in addition, it will offer subtotals for all other groupings of columns listed in the GROUP BY clause.
+CUBE offers the functionality of ROLLUP, and in addition, it will offer subtotals for all other groupings of columns listed in the GROUP BY clause. In this example, the extra functionality of CUBE is not helpful, because there are no other meaningful types of groupings in this dataset using these two fields (beyond grouping countries into regions and regions into a whole). CUBE does produce additional outputs here, "grouping" each country by itself, but this duplicates the information found at the top of the result set. Please see the Resources below for situations in which CUBE can provide helpful cross-dimensional aggregations.
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/511aed12-91cc-450c-975d-7108e98a3af9)
 
@@ -190,6 +190,7 @@ CUBE offers the functionality of ROLLUP, and in addition, it will offer subtotal
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/55add0e4-483f-4b9f-afbf-64b9330bc86e)
 
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/a266dbd4-5905-44c3-a5f3-4550f8889299)
 
 
 

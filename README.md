@@ -171,8 +171,24 @@ https://www.sqlservercentral.com/articles/postgresql-user-defined-functions
 
 ### Calculating Running Totals with CUBE and ROLLUP
 
-CUBE and ROLLUP can be used to identify running totals
+CUBE and ROLLUP can be used to identify running totals.
+
 More here: https://docs.oracle.com/cd/F49540_01/DOC/server.815/a68003/rollup_c.htm
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/511aed12-91cc-450c-975d-7108e98a3af9)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/ee6313b3-1eb6-4e05-9daf-2928b93ac4c1)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/55add0e4-483f-4b9f-afbf-64b9330bc86e)
+
+
+https://www.sqltutorial.org/sql-rollup/ 
+ROLLUP is combined with GROUP BY to create a new line showing totals/subtotals.
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/b0a8db1f-d11a-48a5-93e9-9bfb08a8295d)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/01b8ef5b-8102-4d18-8e82-b35d9b8c25f8)
+
 
 [Back to top](#FluNet)
 

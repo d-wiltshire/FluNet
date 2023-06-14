@@ -7,7 +7,7 @@ Table of contents:
 - [CASE WHEN](#case-when)
 - [Date-Time Functions](#date-time-functions)
 - [User-defined Scalar Functions](#user-defined-scalar-functions)
-- [Using CUBE and ROLLUP for subtotals and totals](#Using-CUBE-and-ROLLUP-for-subtotals-and-totals)
+- [Using ROLLUP and CUBE for subtotals and totals](#Using-ROLLUP-and-CUBE-for-subtotals-and-totals)
 - [Calculating Delta Values with LEAD and LAG](#calculating-delta-values-with-lead-and-lag)
 - [RANK](#rank)
 - [EXCEPT versus NOT IN](#except-versus-not-in)
@@ -169,13 +169,13 @@ https://www.sqlservercentral.com/articles/postgresql-user-defined-functions
 
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/b434a42b-d91a-4c58-9c18-1ae267040382)
 
-### Using CUBE and ROLLUP for subtotals and totals
+### Using ROLLUP and CUBE for subtotals and totals
 
 ROLLUP and CUBE can be used to show subtotals and totals in new rows. Both are extensions of the GROUP BY clause. 
 
 Note: COALESCE() in the queries below can be used to substitute a more meaningful phrase (like "TOTAL") instead of the default display value for subtotal/total rows (a null value).
 
-ROLLUP will produce subtotals and totals, and it assumes a hierarchy of ROLLUP inputs based on the order in which you name them in the ROLLUP statement. The "bigger" item (here the WHO Region) comes first, and ROLLUP will then offer us the subtotal for each country, each WHO Region, and a total for all WHO Regions.
+ROLLUP will produce subtotals and totals, and it assumes a hierarchy of inputs based on the order in which you name them in the ROLLUP statement. The "bigger" item (here the WHO Region) comes first, and ROLLUP will then offer us the subtotal for each country, each WHO Region, and a total for all WHO Regions.
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/b0a8db1f-d11a-48a5-93e9-9bfb08a8295d)
 

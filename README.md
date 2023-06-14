@@ -7,7 +7,7 @@ Table of contents:
 - [CASE WHEN](#case-when)
 - [Date-Time Functions](#date-time-functions)
 - [User-defined Scalar Functions](#user-defined-scalar-functions)
-- [Calculating Running Totals with CUBE and ROLLUP](#calculating-running-totals-with-cube-and-rollup)
+- [Using CUBE and ROLLUP for subtotals and totals](#Using-CUBE-and-ROLLUP-for-subtotals-and-totals)
 - [Calculating Delta Values with LEAD and LAG](#calculating-delta-values-with-lead-and-lag)
 - [RANK](#rank)
 - [EXCEPT versus NOT IN](#except-versus-not-in)
@@ -169,11 +169,20 @@ https://www.sqlservercentral.com/articles/postgresql-user-defined-functions
 
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/b434a42b-d91a-4c58-9c18-1ae267040382)
 
-### Calculating Running Totals with CUBE and ROLLUP
+### Using CUBE and ROLLUP for subtotals and totals
 
-CUBE and ROLLUP can be used to identify running totals.
+ROLLUP and CUBE can be used to show subtotals and totals in new rows. Both are extensions of the GROUP BY clause. 
 
-More here: https://docs.oracle.com/cd/F49540_01/DOC/server.815/a68003/rollup_c.htm
+Note: COALESCE() in the queries below can be used to substitute a more meaningful phrase (like "TOTAL") instead of the default display value for subtotal/total rows (a null value).
+
+ROLLUP will produce subtotals and totals, and it assumes a hierarchy of ROLLUP inputs based on the order in which you name them in the ROLLUP statement. The "bigger" item (here the WHO Region) comes first, and ROLLUP will then offer us the subtotal for each country, each WHO Region, and a total for all WHO Regions.
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/b0a8db1f-d11a-48a5-93e9-9bfb08a8295d)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/01b8ef5b-8102-4d18-8e82-b35d9b8c25f8)
+
+
+CUBE offers the functionality of ROLLUP, and in addition, it will offer subtotals for all other groupings of columns listed in the GROUP BY clause.
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/511aed12-91cc-450c-975d-7108e98a3af9)
 
@@ -182,13 +191,13 @@ More here: https://docs.oracle.com/cd/F49540_01/DOC/server.815/a68003/rollup_c.h
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/55add0e4-483f-4b9f-afbf-64b9330bc86e)
 
 
-https://www.sqltutorial.org/sql-rollup/ 
-ROLLUP is combined with GROUP BY to create a new line showing totals/subtotals.
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/b0a8db1f-d11a-48a5-93e9-9bfb08a8295d)
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/01b8ef5b-8102-4d18-8e82-b35d9b8c25f8)
 
+Resources:
+* https://docs.oracle.com/cd/F49540_01/DOC/server.815/a68003/rollup_c.htm
+* https://www.sqltutorial.org/sql-rollup/ 
+* https://www.sqlservercentral.com/articles/the-difference-between-rollup-and-cube
 
 [Back to top](#FluNet)
 

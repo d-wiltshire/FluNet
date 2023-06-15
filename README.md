@@ -138,7 +138,7 @@ The previous query can be rewritten in the following way:
 Keep in mind that date-time functions are especially specific to the SQL you are using; PostgreSQL differs from MySQL, SQL Server, etc. 
 More on PostgreSQL date-time functions can be found here: https://www.sqlshack.com/working-with-date-and-time-functions-in-postgresql/, and here: https://www.postgresql.org/docs/current/functions-datetime.html
 
-EXTRACT(field FROM source), used with quarter above, can also be used with day, month, year, day of week (DOW), etc.:
+EXTRACT(), used with quarter above, can also be used with day, month, year, day of week (DOW), etc., in the following way:
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/97b3a1c5-6726-4899-b4ae-4b476476b418)
 
@@ -153,7 +153,7 @@ EXTRACT(field FROM source), used with quarter above, can also be used with day, 
 
 Scalar functions are functions that return one row per row of data (unlike aggregate functions, which aggregate multiple rows into one value). Scalar functions can be built-in or user-defined. For example, ROUND() is a built-in scalar function that rounds each given value to a specified number of decimal places. 
 
-Users can define their own scalar functions and call these functions to transform their data. 
+Users can define their own scalar functions and call these functions to transform their data. In this example, we create a function called "ishigh" that takes one parameter, an integer. If the integer is over 100, the function will return "YES", and if the integer is not, the function will return "NO". In the query below, we apply this function to the inf_a value to create a new field called "ishigh".
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/61a2ab7d-58f9-4384-8d2d-392293ad5c7e)
 
@@ -161,9 +161,9 @@ Users can define their own scalar functions and call these functions to transfor
 
 
 Resources:
-https://www.postgresql.org/docs/current/xfunc-sql.html
-https://builtin.com/software-engineering-perspectives/sql-functions
-https://www.sqlservercentral.com/articles/postgresql-user-defined-functions
+* https://www.postgresql.org/docs/current/xfunc-sql.html
+* https://builtin.com/software-engineering-perspectives/sql-functions
+* https://www.sqlservercentral.com/articles/postgresql-user-defined-functions
 
 [Back to top](#FluNet)
 

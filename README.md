@@ -297,7 +297,7 @@ We can rewrite this with a subquery and NOT IN:
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/c850a5db-054d-464d-9bd8-dac2a77440ac)
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/d4db4577-ab7e-40a9-aaa8-4cb58a744a17)
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/e0281392-9a26-4ae7-9e93-7741bcd01246)
 
 
 

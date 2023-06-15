@@ -96,6 +96,7 @@ Adding PARTITION BY to this code allows you to view all the running totals, orde
 
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/bc91116e-de80-47c1-98cf-60a2804da309)
 
+
 ### Correlated Subqueries
 For correlated subqueries, the query must be re-executed for every row, which increases query runtime.
 
@@ -109,7 +110,9 @@ On my machine, this query took over 26 seconds to complete. To compare, the prev
 
 
 [Back to top](#FluNet)
+
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/62f6103e-bc09-4ed8-adb0-e4fc3a2e7c66)
+
 
 ### CASE WHEN
 CASE WHEN allows you to pull different information in SELECT statements depending on certain parameters you set. In the example below, when the week of the year is in the first quarter, the statement will return "Q1" in a new column; when iso_week is in the second quarter of the year, the statement will return "Q2", and so on, where inf_a is over 100.
@@ -148,6 +151,7 @@ EXTRACT(), used with quarter above, can also be used with day, month, year, day 
 [Back to top](#FluNet)
 
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/c75f2a15-cb98-4b90-b676-f47196c78d25)
+
 
 ### User-defined Scalar Functions
 
@@ -245,7 +249,9 @@ Resources:
 
 
 [Back to top](#FluNet)
+
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/34f173f1-d041-410b-95fb-aafd0258fa35)
+
 
 ### RANK
 RANK() is also a window function. RANK() is very similar to ROW_NUMBER() and DENSE_RANK(), so similar that I will discuss only one of the three here. All three will create a "rank" or order the result set by another value. ROW_NUMBER() will create unique values for all rows, similar to an index, even if the value being used to "order" is duplicated. 
@@ -272,16 +278,34 @@ Resources:
 * https://www.eversql.com/rank-vs-dense_rank-vs-row_number-in-postgresql/
 
 [Back to top](#FluNet)
+
 ![whitespace-small2](https://github.com/d-wiltshire/FluNet/assets/100863488/a4873a8d-a404-4324-9e9d-db9db3fb2b2d)
+
 
 ### EXCEPT versus NOT IN
 
-EXCEPT will return the rows from the first query that do not appear in the result set of the second query (compare the function of union, intersect). In this example, we're looking for the rows (relative to country and date) where the inf_a total is higher than 100, and the ah1n12009 figure comprises less than 50% of that inf_a total. EXCEPT excludes the rows in which ah1n12009 comprises more than 50% of the total.
+EXCEPT will return the rows from the first query that do not appear in the result set of the second query (compare the use of union and intersect).
+
+In this example, we're looking for the rows (relative to country and date) where the inf_a total is higher than 100, and the ah1n12009 figure comprises less than 50% of that inf_a total. EXCEPT excludes the rows in which ah1n12009 comprises more than 50% of the total.
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/f277b43c-8cd4-44b9-9159-ea88e01d6229)
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/80a7ac49-762a-4d21-9e2d-e36751bd5b18)
 
+We can rewrite this with a subquery and NOT IN:
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/a24a166f-b497-4bcc-8a7a-5baadfcaf742)
+
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/1e73126f-a1db-4ac6-b81c-0a054fc8b3da)
+
+
+Although these queries appear to return the same results in this case, there are subtle differences between the functioning of EXCEPT and NOT IN. Please consider https://stackoverflow.com/questions/7125291/postgresql-not-in-versus-except-performance-difference-edited-2 and discussion, especially regarding null handling.
+
+
+
+
+Resources:
+* https://www.essentialsql.com/sql-union-intersect-except/
 
 
 [Back to top](#FluNet)

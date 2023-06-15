@@ -301,7 +301,9 @@ We can rewrite this with a subquery and NOT IN:
 
 
 
-Although these queries appear to return the same results in this case, there are subtle differences between the functioning of EXCEPT and NOT IN. In the NOT IN example above, the subquery simply creates a list of inf_a values. That list will include any inf_a value where (inf_a < ah1n12009 x 2) in a given row. In a dataset with many rows like this one, we may have identical inf_a values but for different dates and different countries (e.g., an inf_a value of 150 for the United States on 11-21-2022 and for France on 08-10-2022). If "150" is added to the list of inf_a values to be excluded from the final result set, we may be ultimately excluding too much data.
+Although these queries appear to return the same results in this case, there are subtle differences between the functioning of EXCEPT and NOT IN. 
+
+In the NOT IN example above, the subquery simply creates a list of inf_a values. That list will include any inf_a value where (inf_a < ah1n12009 x 2) in a given row. In a dataset with many rows like this one, we may have identical inf_a values but for different dates and different countries (e.g., an inf_a value of 150 for the United States on 11-21-2022 and for France on 08-10-2022). If "150" is added to the list of inf_a values to be excluded from the final result set, we may be ultimately excluding too much data. I have limited this example to values in Argentina in order to create a result set small enough where unintended duplication is less likely, but this shoudn't be relied on in real-world situations.
 
 Please consider https://stackoverflow.com/questions/7125291/postgresql-not-in-versus-except-performance-difference-edited-2 and discussion, especially regarding indexing.
 

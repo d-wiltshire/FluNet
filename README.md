@@ -288,15 +288,17 @@ EXCEPT will return the rows from the first query that do not appear in the resul
 
 In this example, we're looking for the rows (relative to country and date) where the inf_a total is higher than 100, and the ah1n12009 figure comprises less than 50% of that inf_a total. EXCEPT excludes the rows in which ah1n12009 comprises more than 50% of the total.
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/f277b43c-8cd4-44b9-9159-ea88e01d6229)
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/8d4e5f9f-945f-4bb1-b624-bfb8623433df)
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/80a7ac49-762a-4d21-9e2d-e36751bd5b18)
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/1a21a3e0-5910-4383-98aa-fce94c9921e8)
+
 
 We can rewrite this with a subquery and NOT IN:
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/a24a166f-b497-4bcc-8a7a-5baadfcaf742)
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/c850a5db-054d-464d-9bd8-dac2a77440ac)
 
-![image](https://github.com/d-wiltshire/FluNet/assets/100863488/1e73126f-a1db-4ac6-b81c-0a054fc8b3da)
+![image](https://github.com/d-wiltshire/FluNet/assets/100863488/d4db4577-ab7e-40a9-aaa8-4cb58a744a17)
+
 
 
 Although these queries appear to return the same results in this case, there are subtle differences between the functioning of EXCEPT and NOT IN. Please consider https://stackoverflow.com/questions/7125291/postgresql-not-in-versus-except-performance-difference-edited-2 and discussion, especially regarding null handling.

@@ -1,6 +1,10 @@
 # FluNet
 
-Table of contents:
+## Goal 
+
+The goal of this project is to serve as a teaching tool for SQL students by demonstrating and explaining intermediate-level SQL concepts (using PostgreSQL).
+
+## Table of contents
 - [CTEs](#ctes)
 - [Window Functions](#window-functions)
 - [Correlated Subqueries](#correlated-subqueries)
@@ -12,10 +16,6 @@ Table of contents:
 - [RANK](#rank)
 - [EXCEPT versus NOT IN](#except-versus-not-in)
 
-
-## Goal 
-
-The goal of this project is to serve as a teaching tool for SQL students by demonstrating and explaining intermediate-level SQL concepts (using PostgreSQL).
 
 ## About the data
 

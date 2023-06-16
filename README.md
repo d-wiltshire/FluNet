@@ -4,7 +4,7 @@
 
 The goal of this project is to serve as a teaching tool for SQL students by demonstrating intermediate-level SQL concepts (using PostgreSQL).
 
-## Table of contents
+## SQL Concepts
 - [CTEs](#ctes)
 - [Window Functions](#window-functions)
 - [Correlated Subqueries](#correlated-subqueries)

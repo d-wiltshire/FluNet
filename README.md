@@ -55,7 +55,8 @@ In the query below, the first CTE creates a result set with the region, week of 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/6f765b57-a722-4555-b9f9-ff6495272708)
 
 
-Learn about recursive CTEs here:
+In addition, recursive CTEs, which reference themselves, are a powerful form of CTE and are worth learning. Learn about recursive CTEs here:
+
 * https://www.sqlservertutorial.net/sql-server-basics/sql-server-recursive-cte/
 * https://builtin.com/data-science/recursive-sql
 

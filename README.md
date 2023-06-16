@@ -50,7 +50,7 @@ CTEs, or Common Table Expressions, allow you to use a result set in another quer
 
 In the query below, the first CTE creates a result set with the region, week of the year, and the sum of all the "Type A" totals from that week and region. (This dataset contains multiple years' worth of data, so the inf_a figure is summed over multiple years.) The second CTE takes the region and the sum total from the highest week per region from the first CTE. Then, the two CTEs are merged to identify the week of the year for each region with the highest total of inf_a cases.
 
-<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/d9ca1808-c224-4a56-a452-9efbe10b7067" height="500">
+<img src="https://github.com/d-wiltshire/FluNet/assets/100863488/ae6a6fca-0a70-492b-be4f-5dc93f9b1b71" height="500">
 
 ![image](https://github.com/d-wiltshire/FluNet/assets/100863488/6f765b57-a722-4555-b9f9-ff6495272708)
 

@@ -285,7 +285,7 @@ Resources:
 
 ### EXCEPT versus NOT IN
 
-EXCEPT will return the rows from the first query that do not appear in the result set of the second query (compare the use of union and intersect).
+EXCEPT will return the rows from the first query that do not appear in the result set of the second query (compare the use of UNION and INTERSECT).
 
 In this example, we're looking for the rows (relative to country and date) where the inf_a total is higher than 100, and the ah1n12009 figure comprises less than 50% of that inf_a total. EXCEPT excludes the rows in which ah1n12009 comprises more than 50% of the total.
 

@@ -2,7 +2,7 @@
 
 ## Goal 
 
-The goal of this project is to serve as a teaching tool for SQL students by demonstrating and explaining intermediate-level SQL concepts (using PostgreSQL).
+The goal of this project is to serve as a teaching tool for SQL students by demonstrating intermediate-level SQL concepts (using PostgreSQL).
 
 ## Table of contents
 - [CTEs](#ctes)

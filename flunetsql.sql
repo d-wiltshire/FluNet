@@ -56,11 +56,15 @@ SELECT cte_b.*, cte_a.iso_week
 FROM cte_b
 LEFT JOIN cte_a
 ON cte_a.sum_all_a_subtypes = cte_b.highest_weekly_total
+AND cte_a.whoregion = cte_b.whoregion
 ORDER BY cte_b.whoregion ASC;
+
 
 
 --Recursive CTEs
 --https://www.sqlservertutorial.net/sql-server-basics/sql-server-recursive-cte/
+
+
 
 --Compare top 5 weeks relative to region for subtype_a
 /** 
@@ -254,7 +258,8 @@ BEGIN
 END $$
 LANGUAGE PLPGSQL;
 
-SELECT countryareaterritory, iso_sdate, ishigh(inf_a)
+
+SELECT countryareaterritory, iso_sdate, inf_a, ishigh(inf_a)
 FROM flunet_table
 
 
@@ -268,8 +273,6 @@ LANGUAGE PLPGSQL;
 SELECT countryareaterritory, iso_sdate, total(inf_a, inf_b)
 FROM flunet_table
 
-
---Join to unrelated table? Other tables from this org?
 
 
 --Calculating running totals with CUBE and ROLLUP:
@@ -316,18 +319,25 @@ PIVOT
   FOR whoregion IN ([SEAR], [EUR], [AMR], [AFR], [EMR], [WPR])  
 ) AS PivotTable;  **/
 
---Calculating delta values with LEAD, LAG (window function?)
---https://www.postgresqltutorial.com/postgresql-window-function/postgresql-lag-function/
---https://www.postgresqltutorial.com/postgresql-window-function/postgresql-lead-function/
 
-	 
+
+--Calculating delta values with LEAD, LAG 
+
 SELECT iso_sdate, 
 	inf_a, 
 	LAG(inf_a) OVER (ORDER BY iso_sdate) AS previous_day_amount
 FROM flunet_table
 WHERE countryareaterritory = 'Algeria'
 ORDER BY iso_sdate;
---is this identical to LEAD desc(above?)
+	 
+
+
+SELECT iso_sdate, 
+	inf_a, 
+	LEAD(inf_a) OVER (ORDER BY iso_sdate) AS next_day_amount
+FROM flunet_table
+WHERE countryareaterritory = 'Algeria'
+ORDER BY iso_sdate;
 	 
 	 
 --Using a CTE for variance
@@ -355,9 +365,8 @@ ROUND((CASE WHEN previous_day_amount = 0
 FROM cte_a;
 
 
---Rank versus dense rank versus row number.
---https://www.eversql.com/rank-vs-dense_rank-vs-row_number-in-postgresql/
---With rank, rows with the same value are ranked with the same number. This is not true with dense_rank.
+--Rank (versus dense rank versus row number)
+
 
 WITH cte_a AS (
 SELECT countryareaterritory, 
@@ -377,12 +386,14 @@ FROM cte_a
 SELECT countryareaterritory, iso_sdate, ah1n12009, inf_a
 FROM flunet_table
 WHERE inf_a > 100
+AND countryareaterritory = 'Argentina'
 
 EXCEPT
 
 SELECT countryareaterritory, iso_sdate, ah1n12009, inf_a
 FROM flunet_table
 WHERE ah1n12009 > (.5*inf_a)
+AND countryareaterritory = 'Argentina'
 ORDER BY countryareaterritory, iso_sdate DESC
 
 
@@ -390,13 +401,13 @@ ORDER BY countryareaterritory, iso_sdate DESC
 SELECT countryareaterritory, iso_sdate, ah1n12009, inf_a
 FROM flunet_table
 WHERE inf_a > 100
+AND countryareaterritory = 'Argentina'
 AND inf_a NOT IN 
-    (SELECT inf_a 
+    (SELECT inf_a
 	FROM flunet_table
-	WHERE inf_a < ah1n12009*2)
+	WHERE inf_a < ah1n12009*2
+	AND countryareaterritory = 'Argentina')
 ORDER BY countryareaterritory, iso_sdate DESC
---Please consider https://stackoverflow.com/questions/7125291/postgresql-not-in-versus-except-performance-difference-edited-2 and discussion re: differences in EXCEPT and NOT IN, esp. re: null handling.
-
 
 --The above query returns weeks where inf_a was greater than 100 and the ah1n12009 strain made up less than 50% of that total.
 
